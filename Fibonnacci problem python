@@ -1,0 +1,7 @@
+n=int(input())
+count=0
+a,b=0,1
+while count<n:
+    print(a,end=" ") # a is storing the current result b is storing next
+    a,b=b,a+b
+    count+=1
