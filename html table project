@@ -1,0 +1,26 @@
+<html>
+    <body>
+        <table border="1px" align ="center" cellspacing="0" cellpadding="100">
+            <tr>
+                <td colspan="2"></td>
+                <td rowspan="2" colspan="2"></td>
+            </tr>
+
+            <tr>
+                <td colspan="2"></td>
+            </tr>
+
+            <tr>
+                <td rowspan="2"></td>
+                <td rowspan="2"></td>
+                <td rowspan="2"></td>
+                <td></td>
+            </tr>
+            
+            <tr>
+                <td></td>
+            </tr>
+        </table>
+
+    </body>
+</html>
