@@ -1,0 +1,13 @@
+#generate this pyramid:
+#    *
+#   ***
+#  *****
+# *******
+
+for rows in range(1,5):
+    for col in range(1,8):
+        if 5-rows<=col<=3+rows:
+            print("*",end="")
+        else:
+            print(" ",end="")
+    print()
