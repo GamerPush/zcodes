@@ -1,0 +1,9 @@
+def sum(n):
+ add=0
+ i=1
+ while i<=n:
+    add+=i
+    i+=1
+ print(add)
+n=int(input())
+sum(n)
