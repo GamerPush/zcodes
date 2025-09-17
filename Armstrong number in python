@@ -1,0 +1,19 @@
+n=int(input())
+res=0
+orig=n
+count=0
+while n>0:
+    n//=10
+    count+=1
+
+n=orig#yeh isliye kiya kyoki n=0 ho gya to humne n to phir se initialise kar diya
+
+if count>0:
+    while n>0:
+        dig=n%10
+        res+=dig**count
+        n=n//10
+    if orig==res:
+        print(f"{orig} is an Armstrong number")
+    else:
+        print(f"{orig} is not an Armstrong number")
