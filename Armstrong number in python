@@ -6,7 +6,7 @@ while n>0:
     n//=10
     count+=1
 
-n=orig#yeh isliye kiya kyoki n=0 ho gya to humne n to phir se initialise kar diya
+n=orig #yeh isliye kiya kyoki n=0 ho gya to humne n to phir se initialise kar diya
 
 if count>0:
     while n>0:
