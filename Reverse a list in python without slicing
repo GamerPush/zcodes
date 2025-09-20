@@ -1,0 +1,5 @@
+a=list(map(int,input().split()))
+rev=[]
+for i in range(len(a)-1,-1,-1):
+    rev.append(a[i])
+print(rev)
