@@ -1,0 +1,10 @@
+arr=[6,5,5,7,4,2,7]
+count=0
+n=[]
+for i in arr:
+    print(i)
+    if i in n:
+        None
+    else:
+        n.append(i)
+print(n)
