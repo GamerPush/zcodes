@@ -1,0 +1,7 @@
+arr=list(map(int,input().split()))
+arr=list(set(arr))
+arr.sort()
+if len(arr)<2:
+    print("2nd largest element doesnot exist")
+else:
+    print(arr[-2])
