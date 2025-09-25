@@ -1,0 +1,9 @@
+# prime=[]
+# for i in range(len(arr)):
+#     if arr[i]>1:
+#         for x in range(2,arr[i]): 
+#             if arr[i]%x==0:
+#                 break
+#         else:
+#             prime.append(arr[i])
+# print(prime)
