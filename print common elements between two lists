@@ -1,0 +1,7 @@
+nums1=list(map(int,input().split()))
+nums2=list(map(int,input().split()))
+x=[]
+for i in nums1:
+        if i in nums2 and i not in x:
+            x.append(i)
+print(x)
