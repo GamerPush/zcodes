@@ -1,0 +1,12 @@
+rows = int(input("Enter number of rows: "))
+cols = int(input("Enter number of columns: "))
+
+matrix = [] 
+
+for i in range(rows):
+    row = list(map(int, input(f"Enter row {i+1} elements: ").split()))
+    matrix.append(row)
+
+print("Matrix is:")
+for r in matrix:
+    print(r)
