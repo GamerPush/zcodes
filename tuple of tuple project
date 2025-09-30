@@ -1,0 +1,17 @@
+# 3.	Given a tuple of coordinates:
+# Write a program to calculate the distance of each point from the origin (0,0) and return a tuple of distances.
+
+n=int(input("Enter total points: "))
+points = []
+for i in range(n):
+    x=int(input("Enter x: "))
+    y=int(input("Enter y: "))
+    points.append((x,y))
+points=tuple(points)
+
+dists=[]
+for x,y in points:
+    dis=(x**2 + y**2)**0.5
+    dists.append(round(dis,2))
+dists=tuple(dists)
+print(dists)
