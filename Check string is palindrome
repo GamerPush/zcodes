@@ -1,0 +1,6 @@
+orig=input()
+rev=orig[::-1]
+if orig==rev:
+    print("Yes")
+else:
+    print("No") 
