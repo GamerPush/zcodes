@@ -1,0 +1,6 @@
+x=('p','u','s','h','k','a','r')
+y=list(x)
+z=""
+for i in y:
+    z+=i
+print(z)
