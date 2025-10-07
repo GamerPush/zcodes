@@ -1,0 +1,7 @@
+arr=['a','b','c','a']
+alpha=input("Enter Character: ")
+count=0
+for i in range(len(arr)):
+    if arr[i]==alpha:
+        count+=1
+print(count)
