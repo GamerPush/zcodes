@@ -1,0 +1,19 @@
+n=int(input("Enter No. of students: "))
+students=[]
+for i in range(n):
+    name=input("Enter Name: ")
+    marks=int(input("Enter Marks: "))
+    students.append((name,int(marks)))
+
+students=tuple(students)
+print(students)
+
+total=0
+for name,marks in students:
+    total+=marks
+avg=total/len(students)
+print("Average:",avg)
+
+for name,marks in students:
+    if marks>avg:
+        print(name)
