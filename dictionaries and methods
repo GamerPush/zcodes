@@ -1,0 +1,21 @@
+x={
+    "brand":"BMW",
+    "model":"M5",
+    "year":"2005",
+    "color":["blue","black"]
+}
+x["type"]="SUV"
+y=x.items()#show elements in tuple form
+print(y)
+
+x.update({"type":"racecar"})
+x.pop("model") #key remove
+x.popitem() #3.7 se pehle random remove karta tha
+print(x)
+del x["model"]
+for i in x:
+    print(i)
+for y,z in x.items():
+    print(y,z)
+y=x.copy()
+print(y)
