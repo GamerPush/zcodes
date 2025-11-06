@@ -1,0 +1,14 @@
+n=int(input("Enter order of matrix: "))
+mat=[]
+for i in range(n):
+    data=list(map(int,input().split()))
+    mat.append(data)
+
+tp=[]
+for i in range(n):
+    row=[]
+    for j in range(n):
+        row.append(mat[j][i])
+    tp.append(row)
+for r in tp:
+    print(r)
