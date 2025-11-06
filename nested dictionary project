@@ -1,0 +1,26 @@
+students={
+  "A101": {"name": "Riya", "marks": [78, 89, 91]},
+  "A102": {"name": "Karan", "marks": [55, 60, 65]},
+  "A103": {"name": "Tanya", "marks": [92, 88, 95]}
+  }
+for stuid in students:
+    mark=students[stuid]["marks"]
+    total=0
+    for i in range(0,len(mark)):
+        total+=mark[i]
+        avg=total/3
+    students[stuid]["total"]=total
+    students[stuid]["average"]=avg
+    if avg>=60:
+        students[stuid]["result"]="Pass"
+    else:
+        print("Fail")
+print("Student Summary:\n")
+for sid in students:
+    print(f"ID: {stuid}")
+    print(f"Name: {students[stuid]['name']}")
+    print(f"Marks: {students[stuid]['marks']}")
+    print(f"Total: {students[stuid]['total']}")
+    print(f"Average: {students[stuid]['average']:.2f}")
+    print(f"Result: {students[stuid]['result']}")
+    print("-" * 30)
