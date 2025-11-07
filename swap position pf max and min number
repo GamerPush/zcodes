@@ -1,0 +1,9 @@
+x=tuple(map(int,input().split()))
+if not x:
+    print()
+else:
+    max,min=max(x),min(x)
+    i,j=x.index(max),x.index(min)
+    lst=list(x)
+    lst[i],lst[j]=lst[j],lst[i]
+    print(tuple(lst))
