@@ -1,0 +1,10 @@
+word=input().strip()
+vowel=['a','e','i','o','u','A','E','I','O','U']
+count=0
+if word.isalpha():
+ for ch in word:
+    if ch in vowel:
+        count+=1
+ print("Vowels=",count,"\n Consonants=",len(word)-count)
+else:
+  print("Invalid Input")
