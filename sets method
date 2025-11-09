@@ -1,0 +1,47 @@
+# #union set
+ x={'a','b','c','d'}
+ y={'a','b','e'}
+ z=x.union(y) #x|y
+ print(z)
+
+# #intersection
+ x={'a','b','c','d'}
+ y={'a','b','e'}
+ z=x.intersection(y) #x&y
+ print(z)
+
+#intersection update
+ x={'a','b','c','d'}
+ y={'a','b','d'}
+ z=x.intersection_update(y)
+ print(z)
+
+#difference
+ x={'a','b','c','d'}
+ y={'a','b','e'}
+ z=x.difference(y) #x-y
+ print(z)
+
+#difference update
+ x={'a','b','c','d'}
+ y={'a','b','e'}
+ z=x.difference(y) #x-y
+ print(z)
+
+#symetric difference
+ x={'a','b','c','d'}
+ y={'a','b','e'}
+ z=x.symmetric_difference(y)
+ print(z)
+
+#symetric difference update
+ x={'a','b','c','d'}
+ y={'a','b','e'}
+ z=x.symmetric_difference_update(y)
+ print(z)
+
+#frozen set cannot be added or remove 
+ x=frozenset({'a','b','c',3})
+ z=x.copy()
+ print(x,z)
+# z=x.symmetric_difference_update(y)
