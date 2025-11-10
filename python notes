@@ -1,0 +1,17 @@
+#tuple is a collection which is oredered(indexded) and unchangable tuples are written with () allow duplicate items
+"""
+packing of tuple-input giving
+unpacking-extract value back into a variable
+""" 
+#sets unordered unchangeable unindexed {} cant change item but add or remove dont allow duplicate
+
+#update methods apne aap naye set mein insert nhi karte
+
+#dictonaries are used to store data values in key value pairs
+#dictonary is a collection which bis ordered changable but not allow duplicates
+#earlie dictionary were unorderd
+#written with {} and have key and value
+
+
+#consider a module to be same as code library a file containing a set of fucntion you want to contain in your application
+#to create a module just save the code you want in file with file extension .py
