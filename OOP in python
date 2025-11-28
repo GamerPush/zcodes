@@ -1,0 +1,14 @@
+class Student:
+    class_year=2029
+    num_students=0
+    def __init__(self,student,age):
+        self.student = student
+        self.age = age
+        Student.num_students+=1
+    def fail(self):
+        return(f"{self.student} failed the tests")
+student1=Student("csdd",30)
+student2=Student("fjkwn",31)
+student3=Student("nsdc",32)
+student4=Student("ownc",33)
+print(f"my graduating class of {Student.class_year} has {Student.num_students} students but {student1.fail()}")
