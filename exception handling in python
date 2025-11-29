@@ -1,0 +1,7 @@
+try:
+    number=int(input("Enter no:"))
+    print(1/number)
+except ZeroDivisionError:
+    print("can't divide by zero")
+finally:
+    print("done")
