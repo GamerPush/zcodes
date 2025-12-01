@@ -1,0 +1,35 @@
+class Order:
+
+    def __init__(self,id,name,items,status):
+        self.id=id
+        self.name=name
+        self.items=items
+        self.status=status
+    
+    def add(self,item):
+        self.items.append(item)
+    
+    def remove(self,item):
+        if item in self.items:
+            self.items.remove(item)
+        else:
+            print(f"{item} is not in the cart")
+    
+    def update(self,new_status):
+        self.status=new_status
+    
+    def display(self):
+        print(f"Order id: {self.id}")
+        print(f"Name: {self.name}")
+        print(f"Cart: {self.items}")
+        print(f"Status: {self.status}")
+order1=Order(1,"Ranveer",["milk","eggs","bread"],"pending")
+order2=Order(2,"Raj",["milk","eggs","bread"],"paid") 
+order1.add("rice")
+order1.remove("eggs")
+order1.update("Paid")
+order2.add("Biscuits")
+order2.update("Shipped")
+
+order1.display()
+order2.display() 
