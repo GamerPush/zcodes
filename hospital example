@@ -1,0 +1,14 @@
+class Hospital:
+    data=[]
+    def __init__(self,name,age,disease,doctor):
+        self.name=name
+        self.age=age
+        self.disease=disease
+        self.doctor=doctor
+        Hospital.data.append(self)
+    def __repr__(self):
+        return f"{self.name},{self.age},{self.disease},{self.doctor},"
+    def show_data(self):
+        return Hospital.data
+patient1=Hospital("bif",20,"cancer","iln")
+print(patient1.show_data())
