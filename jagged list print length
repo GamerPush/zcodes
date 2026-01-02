@@ -1,0 +1,7 @@
+n=int(input())
+jagged=[]
+for i in range(n):
+    val=list(map(int,input().split()))
+    jagged.append(val)
+for val in jagged:
+    print(len(val))
