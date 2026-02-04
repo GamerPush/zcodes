@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <select id="l">
+        <option value="english">English</option>
+        <option value="hindi">Hindi</option>
+        <option value="punjabi">Punjabi</option>
+    </select>
+    <button onclick="greet()">Click</button>
+    <p id="p"></p>
+    <script>
+        function greet(){
+        let lang = document.getElementById("l").value;   
+        let msg=""
+        if(lang==="english"){
+            msg="Hello"
+        }
+        else if(lang==="hindi"){
+            msg="Namaste"
+        }
+        else{
+            msg="kiwe aa Seingh"
+        }    document.getElementById("p").innerText=msg;
+    }
+    </script>
+</body>
+</html>
