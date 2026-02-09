@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include<math.h>
+int main(){
+int x,dig,temp,rev=0;
+scanf("%d",&x);
+temp=x;
+while(temp>0){
+dig=temp%10;
+rev=rev*10+dig;
+temp=temp/10;
+}
+if(rev==x || x==0){
+    printf("Palindrome");
+}
+else{
+    printf("Not a Palindrome");
+}
+}
