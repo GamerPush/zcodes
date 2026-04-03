@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main(){
+    int n,fact=1,sum=0;
+    scanf("%d",&n);
+    for(int i=1;i<=n;i++){
+        fact*=i;
+        printf("%d!/%d + ",i,i);
+        if(i<n)
+        printf(" + ");
+        sum+=(fact/i);
+    }
+printf(" = %d",sum);
+return 0;
+}
