@@ -1,0 +1,27 @@
+#include <stdio.h>
+typedef struct studentInfo{
+    int id;
+    char name[100];
+    int marks;
+}student;
+int main() {
+    int n;
+    scanf("%d",&n);
+    student s[n];
+    int a[n];
+    int*ptr=a;
+    for(int i=0;i<n;i++){
+        scanf("%d %s %d",&s[i].id,s[i].name,&s[i].marks);
+    }
+    int high=s[0].marks,low=s[0].marks,sum=0;
+    for(int i=0;i<n;i++){
+        if(high<s[i].marks){
+            high=s[i].marks;
+        }
+        if(low>s[i].marks){
+            low=s[i].marks;
+        }
+        sum+=s[i].marks;
+    }
+    printf("highest:%d\nlowest:%d\nTotal:%d\n",high,low,sum);
+}
