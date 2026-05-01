@@ -1,0 +1,13 @@
+#include <stdio.h>
+int gcd(int *a,int *b){
+    if(*b==0)
+    return *a;
+    int temp=*a%*b;
+    return gcd(b,&temp);
+}
+int main(){
+    int a,b;
+    scanf("%d %d",&a,&b);
+    int res=gcd(&a,&b);
+    printf("GCD = %d ",res);
+}
