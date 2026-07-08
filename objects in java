@@ -1,0 +1,28 @@
+import java.util.Scanner;
+class Student{
+    int roll;
+    int marks;
+    String name;
+}
+public class OOP{
+    public static void main(String[] args) {
+        Scanner inp=new Scanner(System.in);
+        int n=inp.nextInt();
+        Student[]s=new Student[n];
+        
+        for (int i = 0; i < n; i++) {
+            s[i]=new Student();
+        }
+        
+        for (int i = 0; i < n; i++) {
+            s[i].name=inp.next();
+            s[i].roll=inp.nextInt();
+            s[i].marks=inp.nextInt();
+        }
+        
+       for (int i = 0; i < n; i++) {
+            System.out.println("Name: "+s[i].name+" Roll no: "+s[i].roll+" Marks: "+s[i].marks);
+        }
+        
+    }
+}
