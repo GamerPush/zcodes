@@ -1,0 +1,55 @@
+import java.util.Scanner;
+public class Practice1 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n=input.nextInt();
+        int a[]=new int[n];
+        readArray(a);
+        findMax(a);
+        countZero(a);
+        oddEven(a);
+        shiftZero(a);
+    }        
+    public static void readArray(int []a){
+        Scanner sc=new Scanner(System.in);
+        for(int i=0;i<a.length;i++){
+            a[i]=sc.nextInt();
+        }       
+    }
+    public static void findMax(int []a){
+        int max=a[0];
+        for (int i = 0; i < a.length; i++) {
+            if(a[i]>max)
+            max=a[i];
+        }
+        System.out.println("Maximum: "+max);
+    }
+    public static void countZero(int []a){
+        int count=0;
+        for (int i = 0; i < a.length; i++) {
+            if(a[i]==0)
+            count++;
+        }
+        System.out.println("Zeroes: "+count);
+    }
+    public static void oddEven(int []a){
+        for (int i = 0; i < a.length; i++) {
+            if(a[i]%2==0)
+                System.out.println("Even: "+a[i]);
+            else
+                System.out.println("Odd: "+a[i]); 
+        }
+    }
+    public static void shiftZero(int []a){
+        for (int i = 0; i < a.length; i++) {
+            for (int j = i+1; j < a.length; j++) {
+                if(a[i]==0){
+                    int temp=a[i];
+                    a[i]=a[j];
+                    a[j]=temp;
+                }
+            } 
+            System.out.print(a[i]);
+        }
+    }
+}
