@@ -1,0 +1,91 @@
+import java.util.Scanner;
+public class Practice1 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n=input.nextInt();
+        int a[]=new int[n];
+        int odd[]=new int[n];
+        int even[]=new int[n];
+        int combined[]=new int[n];
+        readArray(a);
+        OddEvens(a,odd,even);
+        findMaxIndex(a);
+        reverse(a);
+        shiftOddsEvens(a,odd,even,combined);
+    }    
+
+    public static void readArray(int []a){
+        Scanner sc=new Scanner(System.in);
+        for(int i=0;i<a.length;i++){
+            a[i]=sc.nextInt();
+        }       
+    }
+
+    public static void findMaxIndex(int []a){
+        int maxInd=0;
+        for (int i = 0; i < a.length; i++) {
+            if(a[maxInd]<a[i]){
+                maxInd=i;
+            }
+        }
+        System.out.println("Max Index: "+maxInd);
+    }
+    
+    public static void reverse(int []a){
+        System.out.print("Reverse: ");
+        for (int i = a.length-1; i >= 0; i--) {
+            System.out.print(a[i]+" ");
+        }
+        System.out.println();
+    }
+    
+    public static void OddEvens(int []a,int []odd,int []even){
+        int countEven=0;
+        int countOdd=0;
+        for (int i = 0; i < a.length; i++) {
+            if(a[i]%2==0){
+                even[countEven++]=a[i];//an array is treated as an object in java so make another var not same or it will be initialised as 0
+            }
+            else{
+                odd[countOdd++]=a[i];//if we do countOdd=i then answer will also have unecessary 0
+            }
+        }
+        System.out.print("odd: ");
+
+        for(int i=0;i<countOdd;i++){
+            System.out.print(odd[i]+" ");
+        }
+
+        System.out.println();
+        System.out.print("Even: ");
+
+        for(int i=0;i<countEven;i++){
+            System.out.print(even[i]+" ");
+        }
+        System.out.println();
+    }
+
+    public static void shiftOddsEvens(int []a,int []odd,int []even,int[]combined){
+        int countEven=0;
+        int countOdd=0;
+        int combine=0;
+        for (int i = 0; i < a.length; i++) {
+            if(a[i]%2==0){
+                even[countEven++]=a[i];
+            }
+            else{
+                odd[countOdd++]=a[i];
+            }
+        }
+        for (int i = 0; i < countOdd; i++) {
+            combined[combine++]=odd[i];
+        }
+        for(int i=0;i<countEven;i++){
+            combined[combine++]=even[i];
+        }
+        System.out.print("Combined Array: ");
+        for(int i=0;i<a.length;i++){
+            System.out.print(combined[i]+" ");
+        }  
+    }
+}
