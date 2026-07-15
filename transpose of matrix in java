@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+public class Practice1 {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter order of matrix: ");
+        int n = input.nextInt();
+
+        int[][] a = new int[n][n];
+        int[][] b = new int[n][n];
+        int[][] c = new int[n][n];
+
+        readMatrices(a, b, input);
+        System.out.println("\nTranspose of Matrix A:");
+        printTranspose(a,b);
+        input.close();
+    }
+
+    public static void readMatrices(int[][] a, int[][] b, Scanner sc) {
+
+        System.out.println("Enter elements of Matrix A:");
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < a.length; j++) {
+                a[i][j] = sc.nextInt();
+            }
+        }
+
+        System.out.println("Enter elements of Matrix B:");
+        for (int i = 0; i < b.length; i++) {
+            for (int j = 0; j < b.length; j++) {
+                b[i][j] = sc.nextInt();
+            }
+        }
+    }
+    public static void printTranspose(int[][] a,int[][]b) {
+
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < a.length; j++) {
+                System.out.print(a[j][i] + " ");
+            }
+            System.out.println();
+        }
+        for (int i = 0; i < b.length; i++) {
+            for (int j = 0; j < b.length; j++) {
+                System.out.print(b[j][i] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
