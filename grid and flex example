@@ -1,0 +1,74 @@
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Layout</title>
+
+<style>
+    *{
+        padding:0px;
+        margin: 0px;
+        box-sizing: border-box;
+    }
+body{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+}
+
+main{
+    flex:1;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:1fr 1fr;
+}
+
+.l{
+    background:aqua;
+    padding:20px;
+}
+
+.r{
+    background:blueviolet;
+    padding:20px;
+}
+
+.lb{
+    background:gold;
+    padding:20px;
+}
+
+.rb{
+    background:grey;
+    padding:20px;
+}
+header{
+    background-color: maroon;
+    padding: 1rem;
+    color:white
+}
+footer{
+    background-color: maroon;
+    padding: 1rem;
+    color:white;
+}
+</style>
+</head>
+
+<body>
+
+<header>HEADER / NAVBAR</header>
+
+<main>
+    <section class="l">Blue</section>
+    <section class="r">Purple</section>
+    <section class="lb">Gold</section>
+    <section class="rb">Grey</section>
+</main>
+
+<footer>FOOTER</footer>
+
+</body>
+</html>
+<!-- these all are flex but the main part is grid not flex but overall main is flex  -->
