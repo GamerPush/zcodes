@@ -1,0 +1,83 @@
+import java.util.Scanner;
+
+public class Practice1 {
+
+    public static void main(String[] args) {
+
+        Scanner in = new Scanner(System.in);
+
+        System.out.print("Enter size: ");
+        int n = in.nextInt();
+
+        int[] a = new int[n];
+
+        System.out.println("Enter array:");
+        readArray(a, in);
+
+        System.out.print("Enter x and y: ");
+        int x = in.nextInt();
+        int y = in.nextInt();
+
+        System.out.println("Linear Search Index: " + linearSearch(a, x));
+        System.out.println("Is Sorted: " + isSorted(a));
+
+        replaceAll(a, x, y);
+        rotateArray(a);
+
+        in.close();
+    }
+
+    public static void readArray(int[] a, Scanner in) {
+        for (int i = 0; i < a.length; i++) {
+            a[i] = in.nextInt();
+        }
+    }
+
+    public static int linearSearch(int[] a, int x) {
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] == x)
+                return i;
+        }
+        return -1;
+    }
+
+    public static boolean isSorted(int[] a) {
+        for (int i = 0; i < a.length - 1; i++) {
+            if (a[i] > a[i + 1])
+                return false;
+        }
+        return true;
+    }
+
+    public static void replaceAll(int[] a, int x, int y) {
+
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] == x)
+                a[i] = y;
+            else if (a[i] == y)
+                a[i] = x;
+        }
+
+        System.out.print("Replaced Array: ");
+        printArray(a);
+    }
+
+    public static void rotateArray(int[] a) {
+
+        for (int i = a.length - 1; i > 0; i--) {
+            int temp = a[i];
+            a[i] = a[i - 1];
+            a[i - 1] = temp;
+        }
+
+        System.out.print("Rotated Array: ");
+        printArray(a);
+    }
+
+    public static void printArray(int[] a) {
+        for (int num : a) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+    }
+}
