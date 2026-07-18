@@ -1,0 +1,53 @@
+import java.util.Scanner;
+public class Practice1{
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        int n=in.nextInt();
+        int m=in.nextInt();
+        int []a=new int[n];
+        if(isPrime(n))
+            System.out.println(n+" is Prime");
+        else
+            System.out.println(n+" is not Prime");
+       
+        printPrimes(n,m);
+        System.out.print("Enter elements:");
+        readArray(a,in);
+        appendPrimes(a);
+    }
+    public static void readArray(int []a,Scanner in){
+        for(int i=0;i<a.length;i++){
+            a[i]=in.nextInt();
+        }
+    }
+    public static boolean isPrime(int n){
+        for(int i=2;i<n;i++){
+            if(n%i==0){
+                return false;
+            }
+        }
+        return true;
+    }
+    public static void printPrimes(int n,int m){
+        //print primes bw n&m include n,m also
+        System.out.print("Primes between numbers are: ");
+        for(int i=n;i<=m;i++){
+            if(isPrime(i))
+                System.out.print(i+" ");
+        }
+        System.out.println();
+    }
+    public static void appendPrimes(int a[]){     //append next prime no in place of element zero
+        System.out.print("Appended Array: ");
+        for(int i=0;i<a.length;i++){
+            if(a[i]==0){
+                int previous=a[i-1];
+                int next=previous+1;
+                while(!isPrime(next))
+                    next++;
+                a[i]=next;  
+            }
+            System.out.print(a[i]+" ");
+        }
+    }
+}
