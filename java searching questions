@@ -1,0 +1,112 @@
+import java.util.Scanner;
+
+public class Practice1 {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        System.out.print("Enter Size of Array for insertion: ");
+        int n = in.nextInt();
+
+        int[] a = new int[n + 1];
+        System.out.print("Enter Array : ");
+        readArray(a);
+
+        System.out.print("Enter number for insertion: ");
+        int num = in.nextInt();
+
+        System.out.print("Enter Index for insertion: ");
+        int index = in.nextInt();
+
+        System.out.print("Array after Insertion: ");
+        insertion(a, index, num);
+        System.out.println();
+
+        System.out.print("Enter Size of Array for Deletion: ");
+        int m = in.nextInt();
+
+        int[] b = new int[m];
+        System.out.print("Enter Array : ");
+        readArray1(b, in);
+
+        System.out.print("Enter number present in array for Deletion: ");
+        int num1 = in.nextInt();
+
+        System.out.print("Array after Deletion: ");
+        deletion(b, num1);
+        System.out.println();
+
+        System.out.print("Enter Size of Sorted array for Insertion: ");
+        int o = in.nextInt();
+
+        int[] c = new int[o + 1];
+
+        System.out.print("Enter Sorted Array : ");
+        readArray2(c, in);
+
+        System.out.print("Enter number for Insertion: ");
+        int num2 = in.nextInt();
+
+        System.out.print("Sorted array after insertion : ");
+        insertAtIndexSorted(c, num2);
+    }
+
+    public static void readArray(int[] a) {
+        Scanner in = new Scanner(System.in);
+        for (int i = 0; i < a.length - 1; i++) {
+            a[i] = in.nextInt();
+        }
+    }
+
+    public static void insertion(int[] a, int index, int num) {
+        for (int i = a.length - 1; i > index; i--) {
+            if (a[i] == 0) {
+                int temp = a[i];
+                a[i] = a[i - 1];
+                a[i - 1] = temp;
+            }
+        }
+
+        a[index] = num;
+
+        for (int i = 0; i < a.length; i++) {
+            System.out.print(a[i] + " ");
+        }
+    }
+
+    public static void readArray1(int[] b, Scanner in) {
+        for (int i = 0; i < b.length; i++) {
+            b[i] = in.nextInt();
+        }
+    }
+
+    public static void deletion(int[] b, int num1) {
+        for (int i = 0; i < b.length; i++) {
+            if (b[i] == num1) {
+                continue;
+            }
+            System.out.print(b[i] + " ");
+        }
+    }
+
+    public static void readArray2(int[] c, Scanner in) {
+        for (int i = 0; i < c.length - 1; i++) {
+            c[i] = in.nextInt();
+        }
+    }
+
+    public static void insertAtIndexSorted(int[] c, int num2) {
+        c[c.length - 1] = num2;
+
+        for (int i = c.length - 1; i > 0; i--) {
+            if (c[i] < c[i - 1]) {
+                int temp = c[i];
+                c[i] = c[i - 1];
+                c[i - 1] = temp;
+            }
+        }
+
+        for (int i = 0; i < c.length; i++) {
+            System.out.print(c[i] + " ");
+        }
+    }
+}
