@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class Practice1 {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter no. of Strings: ");
+        int n= in.nextInt();
+        String str[]=new String[n];
+        readArray(str, in);
+        System.out.println("Max length: "+strMaxLen(str));
+        startsWithP(str);
+        strCompare(str);
+    }
+    
+    public static void readArray(String str[],Scanner in){
+        for(int i=0;i<str.length;i++){
+            str[i]=in.next();
+        }
+    }
+    public static void strCompare(String[] str){
+        for(int i = 0; i < str.length - 1; i++){
+            if(str[i].equals(str[i + 1]))
+                System.out.println(str[i] + " and " + str[i + 1] + " : Same");
+            else
+                System.out.println(str[i] + " and " + str[i + 1] + " : Not Same");
+        }
+    }
+    public static String strMaxLen(String[] str){
+        String max=str[0];
+        for(String s:str){
+            if(s.compareTo(max)>0)
+                max=s;
+        }
+        return max;
+    }
+    public static void startsWithP(String[] str){
+        for(String s:str){
+            if(s.startsWith("p"))
+                System.out.println(s);
+        }
+    }
+}
