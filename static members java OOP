@@ -1,0 +1,32 @@
+class Point{
+    int x,y;
+    static int orgx,orgy;
+    static {       //static block to initisalise static members 
+        orgx=30;
+        orgy=30;
+    }
+    public static void printOrigins(){
+        System.out.println(orgx+","+orgy);//cant print x,y because they are only accecible by objects 
+    }
+    public static int getOrgx(){
+        return orgx;
+    }
+    public void show(){
+        System.out.println(x+","+y);
+        System.out.println(orgx+","+orgy);
+    }
+
+}
+
+public class OOP{
+    public static void main(String[] args) {
+        // Scanner inp=new Scanner(System.in);
+        // int n=inp.nextInt();   
+        Point p1=new Point();
+        Point p2=new Point();
+        p1.x=10;p1.y=20;p2.x=10;p2.y=30;
+        Point.orgx=10;Point.orgy=20;
+        //p1.orgx;p1.orgy not accecible because shared in class memory
+
+    }
+}
