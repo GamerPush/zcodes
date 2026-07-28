@@ -1,0 +1,40 @@
+class EMPLOYEE {
+    private  static int EMPidP = 1;
+    private int EMPID;
+    private String name;
+    private String DEPARTMENT;
+    {
+        System.out.println("SECRET CONSTRUCTOR");
+    }
+    public EMPLOYEE(String name) {
+        this.EMPID = EMPidP;
+        EMPidP++;
+        this.name = name;
+    }
+    public EMPLOYEE(String name, String DEPARTMENT) {
+        this.EMPID = EMPidP;
+        EMPidP++;
+        this.name = name;
+        this.DEPARTMENT = DEPARTMENT;
+    }
+
+    public void show() {
+        if(DEPARTMENT==null){
+            DEPARTMENT="(NOT DECLARED)";    
+        }
+        System.out.println("THE NAME OF THE EMPLOYEE IS " + name + " THE DEPARTMENT THEY ARE IN " + DEPARTMENT + " THEIR ID IS " + EMPID);
+    }
+}
+
+class OOP {
+    public static void main(String[] args) {
+        EMPLOYEE e1 = new EMPLOYEE("MAULIK", "SDE");
+        EMPLOYEE e2 = new EMPLOYEE("NIGGESH", "HR");
+        EMPLOYEE e3 = new EMPLOYEE("XYZ", "FINANCE");
+        EMPLOYEE e4=  new EMPLOYEE("QWERT");
+        e1.show();
+        e2.show();
+        e3.show();
+        e4.show();
+    }
+}
