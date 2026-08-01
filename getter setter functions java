@@ -1,0 +1,75 @@
+class Account {
+    private static int nextAcno = 1101;
+    private int acno;
+    private double balance;
+
+    // getter and setter methods used to access private variables in other classes
+    public int getAcno() {
+        return acno;
+    }
+
+    public void setAcno(int acno) {
+        this.acno = acno;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
+    public Account() {
+        this.acno = nextAcno;
+        nextAcno++;
+        this.balance = 0;
+        System.out.println("Account created with balance 0");
+    }
+
+    public void deposit(double amt) {
+        System.out.println(amt + " deposited to Ac: " + acno);
+        balance += amt;
+    }
+
+    public void withdraw(double amt) {
+        if(balance<amt){
+            System.out.println("Not Enough Balance");
+            return ;
+        }
+        System.out.println(amt + " withdrawn from Ac: " + acno);
+        balance -= amt;
+    }
+
+    public void show() {
+        System.out.println("remaining balance in Ac:" + acno + " is " + balance);
+    }
+}
+
+class SavingsAc extends Account {
+    String debitCard;
+    public SavingsAc(String debitCard) {
+        super();
+        this.debitCard=debitCard;
+        System.out.println("Savings Ac: "+getAcno()+" with debit card no: "+debitCard+" has been created");
+    }
+    public String getDebitCard(){return debitCard;}
+    public void setdebitcard(String debitCard){this.debitCard= debitCard;}
+    public void show(){
+        System.out.println("saving Ac: "+ getAcno()+ " with Balance "+ getBalance()+ " and debit card no: "+ debitCard);
+    }
+}
+
+public class OOP {
+    public static void main(String[] args) {
+        Account acc1=new Account();
+        SavingsAc savingsAc=new SavingsAc("1234 5678 3214");
+        acc1.deposit(10000);
+        acc1.withdraw(20000);
+        acc1.withdraw(2000);
+        acc1.show();
+
+        savingsAc.deposit(5000);
+        savingsAc.show();
+    }
+}
