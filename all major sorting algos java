@@ -1,0 +1,84 @@
+import java.util.Scanner;
+class Practice1 {
+    public static void main(String args[]){
+        Scanner in=new Scanner(System.in);
+        int n=in.nextInt();
+        int a[]=new int[n];
+        readArray(a,in);
+        selectionSort(a);//select mins and swap
+        bubbleSort(a);
+        insertionSort(a);//comparing and swapping
+        mergeSort(a,0,a.length-1);//dividing array and then comparing swapping
+        printArray(a);
+    }
+    static  void readArray(int a[],Scanner in){
+        for(int i=0;i<a.length;i++)
+            a[i]=in.nextInt();
+    }
+    static void selectionSort(int a[]){
+        for(int i=0;i<a.length-1;i++){
+            int minInd=i;
+            for(int j=i+1;j<a.length;j++){
+                if(a[j]<a[minInd])
+                    minInd=j;
+            }
+            int temp=a[i];
+            a[i]=a[minInd];
+            a[minInd]=temp;
+        }
+    }
+    static void bubbleSort(int a[]){
+        for(int i=0;i<a.length-1;i++){
+            int didSwap=0;
+            for(int j=0;j<a.length-1-i;j++){
+                if(a[j]>a[j+1]){
+                    int temp=a[j+1];
+                    a[j+1]=a[j];
+                    a[j]=temp;
+                    didSwap=1;
+                }
+            }
+            if(didSwap==0)
+                break;
+        }
+    }
+    static void insertionSort(int a[]){
+        for(int i=1;i<a.length;i++){
+            int j=i;
+            while(j>0&&a[j-1]>a[j]){
+                int temp=a[j-1];
+                a[j-1]=a[j];
+                a[j]=temp;
+                j--;
+            }
+        }
+    }
+
+    static void mergeSort(int a[],int low,int high){
+        if(low>=high)return;
+            int mid=low+(high-low)/2;
+            mergeSort(a,low,mid);
+            mergeSort(a, mid+1, high);
+            merge(a,low,mid,high);
+    }
+    static void merge(int a[],int low,int mid,int high){
+        int left=low,right=mid+1,k=0;
+        int temp[]=new int [high-low+1];
+        while(left<=mid&&right<=high){
+            if(a[left]>=a[right])
+                temp[k++]=a[right++];
+            else
+                temp[k++]=a[left++];
+        }
+        while(left<=mid)
+            temp[k++]=a[left++];
+        while(right<=high)
+            temp[k++]=a[right++];
+        for(int i=low;i<=high;i++)
+            a[i]=temp[i-low];
+    }
+    static void printArray(int a[]) {
+        for(int x:a)
+            System.out.print(x+" ");
+    }
+}
