@@ -1,0 +1,39 @@
+class Box{
+    protected double l,w,h;
+    public Box(double l,double w,double h){
+        this.l=l;this.w=w;this.h=h;
+    }
+    public double volume(){
+        return l*w*h;
+    }
+    public void show(){
+        System.out.println("Box:["+l+","+w+","+h+"]");
+    }
+
+}
+class OpenBox extends Box{
+    public OpenBox(double l,double w,double h){ //make constructor of derived class which which has same parameter as base class(box)
+        super(l,w,h);
+    }
+    public double surfaceArea(){
+        return l*w+2*(w*h+h*l);
+    }
+}
+
+public class OOP{
+    public static void main(String[] args) {
+        // Scanner inp=new Scanner(System.in);
+        // int n=inp.nextInt();
+        Box b=new Box(5,4,3);
+        OpenBox ob=new OpenBox(2,1,3);
+        b.show();//superclass
+        System.out.println(b.volume());
+        ob.show();
+        //ob=b; ERROR as we cant assign  to box as box is the subclass of super derived->sub allowed
+        b=ob;//we can only access variable upto super not methods of subclass
+        //called class overriding
+        //b.surfaceArea();ERROR
+        ob.surfaceArea();
+        b.show();// this will show l,w,h of subclass as we have assigned to it
+    }
+}
