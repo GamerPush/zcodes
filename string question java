@@ -1,0 +1,21 @@
+import java.util.Scanner;
+class Practice1 {
+    public static void main(String args[]){
+        Scanner in=new Scanner(System.in);
+        String s1=in.nextLine();
+        System.out.println(rev(s1));
+    }
+    static String rev(String s1){//Pushkar Goyal -> rushkaP loyagG
+        String []strs=s1.split(" ");
+        StringBuilder ans=new StringBuilder();
+        for(String str:strs){
+            int n=str.length()-1;
+            char temp=str.charAt(0);
+            StringBuilder sb=new StringBuilder(str);
+            sb.setCharAt(0, sb.charAt(n));
+            sb.setCharAt(n, temp);
+            ans.append(sb).append(" ");
+        }
+        return ans.toString();
+    }
+}
