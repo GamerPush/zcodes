@@ -1,0 +1,43 @@
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.*;
+class ShortPasswordException extends Exception{
+    @Override
+    public String getMessage(){
+        return "Password length should be more than 6";
+    }
+}
+public class Practice1 {
+    public static void main(String[] args) throws ShortPasswordException {
+        Scanner sc = new Scanner(System.in);
+        String pass=sc.next();
+        if(pass.length()<6)
+            throw new ShortPasswordException();
+        
+    }
+    public static void dummyThrows() throws ClassNotFoundException,SQLException,Exception{
+        ClassNotFoundException clEx=new ClassNotFoundException();
+        if(Math.random()<0.3)
+            throw clEx;
+        SQLException sqlEx=new SQLException();
+        if(Math.random()<0.5)
+            throw sqlEx;
+        Exception Ex=new Exception();
+        if(Math.random()<0.5)
+            throw Ex;
+        if(Math.random()<0.5) throw new NullPointerException();
+        if(Math.random()<0.5) throw new InputMismatchException();
+    }
+    public static void printFile(String fileName) throws FileNotFoundException,IOException{
+        FileReader fr=new FileReader(fileName);
+        Scanner sc=new Scanner(fr);
+        while(sc.hasNextLine()){
+            String line=sc.nextLine();
+            System.out.println(line);
+        }
+        sc.close();
+        fr.close();
+    }
+}
