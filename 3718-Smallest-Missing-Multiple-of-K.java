@@ -1,6 +1,5 @@
 class Solution {
     public int missingMultiple(int[] nums, int k) {
-        Arrays.sort(nums);
         int count=0;
         ArrayList<Integer> list=new ArrayList<>();
         for(int i=0;i<nums.length;i++){
