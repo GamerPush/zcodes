@@ -1,0 +1,27 @@
+import java.util.*;
+public class Practice2 {
+    public static void main(String[] args) {
+        List<Integer> list=new ArrayList<>();
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter size of Array: ");
+        int n=sc.nextInt();
+
+        for(int i=0;i<n;i++){
+            list.add(sc.nextInt());
+        }
+        System.out.println(swaPairs(list));
+    }
+    public static List<Integer> swaPairs(List<Integer> list){
+        for(int i=0;i<list.size()-2;i+=2){
+            int temp=list.get(i);
+            list.set(i,list.get(i+1));
+            list.set(i+1,temp);
+        }
+        return list;
+    }
+}
+// swapPairs(list); 
+// function swaps 1st element with 2nd, 3rd with 4th
+// and so on (for odd number of elements last element is as it is)
+// after the function if i print the list, answer must be :
+// two one four three siz five seven
