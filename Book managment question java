@@ -1,0 +1,48 @@
+import java.util.*;
+class BookNotAvailableException extends Exception{
+    public BookNotAvailableException(String message){
+        super(message);
+    }
+}
+class Book{
+    String name;
+    int copies;
+    public Book(String name,int copies){
+        this.name=name;
+        this.copies=copies;
+    }
+}
+class Practice2{
+    public static void main(String[] args) {
+        List<Book> list=new ArrayList<>();
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        for(int i=0;i<n;i++){    
+            String name=sc.next();
+            int copies=sc.nextInt();
+            Book book=new Book(name,copies);
+            list.add(book);
+        }
+        String requestedBook=sc.next();
+        try {
+            boolean found=false;
+            for(Book book:list){
+                if(book.name.contentEquals(requestedBook)){
+                    found=true;
+                    if(book.copies>0){
+                        book.copies--;
+                        System.out.println("Issued: "+requestedBook);
+                    }
+                    else
+                        throw new BookNotAvailableException("Book not available: "+requestedBook);
+                    break;
+                }
+            }
+            if(!found)
+                throw new BookNotAvailableException("Book not available: "+requestedBook);
+        } 
+        catch (BookNotAvailableException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
