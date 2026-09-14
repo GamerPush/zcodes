@@ -1,0 +1,25 @@
+import java.util.*;
+class Practice2{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int []a=new int[n];
+        List<Integer> list=new ArrayList<>();
+        readArray(sc,a);
+        System.out.println(reverseK(list,a,0,2));
+    }
+    public static void readArray(Scanner sc,int []a){
+        for(int i=0;i<a.length;i++){
+            a[i]=sc.nextInt();
+        }
+    }
+    public static List<Integer> reverseK(List<Integer> list,int[]a,int i,int k){
+        if(i==a.length)
+            return list;
+        int end=Math.min(i+k,a.length);
+        for(int j=end-1;j>=i;j--){
+            list.add(a[j]);
+        }
+        return reverseK(list,a,end,++k);
+    }
+}
