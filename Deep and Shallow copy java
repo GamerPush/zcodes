@@ -1,0 +1,65 @@
+import java.util.*;
+
+class Student {
+    int roll;
+    String name;
+    int[] marks = new int[5];
+    public Student(String name,int roll){
+        this.name=name;
+        this.roll=roll;
+    }
+    public Student(int roll,String name,int[]marks){
+        this.roll=roll;
+        this.name=name;
+        // this.marks=marks; Shallow Copy
+        for(int i=0;i<marks.length;i++){
+            this.marks[i]=marks[i];
+        }
+    }
+    public Student(Student s){//Deep Copy
+        this.roll=s.roll;
+        this.name=s.name;
+        for(int i=0;i<marks.length;i++){
+            this.marks[i]=s.marks[i];
+        }
+    }
+    public void setMarks(int []marks){
+        for(int i=0;i<marks.length;i++){
+            this.marks[i]=marks[i];
+        }
+    }
+    public void setRoll(int roll){
+        this.roll=roll;
+    }
+    public void setName(String name){
+        this.name=name;
+    }
+    public int[] getMarks(){
+        return marks;
+    }
+    public int getRoll(){
+        return roll;
+    }
+    public String getName(){
+        return name;
+    }
+    @Override 
+    public String toString(){
+        return "Roll: "+roll+" Name: "+name;
+    }
+}
+
+class Practice2 {
+    public static void main(String[] args) {
+        int marks[]={56,67,66,49,22};
+        Student s1=new Student("Modi",123);
+        Student s2=new Student("Rahul",124);
+        s1.setMarks(marks);
+        s2.setMarks(marks);
+        // s1.marks[4]=90; Deep copy we can change individual marks in shallow both would have changed
+        System.out.println(Arrays.toString(s1.getMarks()));
+        System.out.println(Arrays.toString(s2.getMarks()));
+        System.out.println(s1.getRoll());
+        System.out.println(s1.getName());
+    }
+}
