@@ -1,0 +1,37 @@
+import java.util.*;
+
+class Practice2 {
+    public static void main(String[] args) {
+        Stack<String> stack = new Stack<String>();
+        stack.push("Minecraft");
+        stack.push("GTA");
+        stack.push("COD");
+        //stack.pop();removes uppermost
+        System.out.println(stack);
+        System.out.println(stack.peek());//prints uppermost
+        System.out.println(stack.search("COD"));//gives position from top
+        
+
+
+
+        Queue<String> queue=new LinkedList<String>();
+        queue.offer("Pushkar");//adds to queue
+        queue.offer("Chad");
+        queue.offer("Steve");
+        System.out.println(queue.peek());//head element
+        System.out.println(queue.poll());//removes head element
+        //dosenot cause exception of queue being empty
+        System.out.println(queue.contains("Chad"));//prints boolean
+        System.out.println(queue.size());
+        System.out.println(queue.isEmpty());
+
+
+
+        Queue<Double> queue1 = new PriorityQueue<>();
+        queue1.offer(1.0);
+        queue1.offer(3.0);
+        queue1.offer(2.5);
+        queue1.offer(0.5);
+        System.out.println(queue1);
+    }
+}
