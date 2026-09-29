@@ -3,6 +3,7 @@ public class Graph{
     ArrayList<Node> nodes;
     int [][]matrix;
     Graph(int size){
+        nodes=new ArrayList<>();
         matrix=new int[size][size];
     }
     public void addNode(Node node){
@@ -17,15 +18,15 @@ public class Graph{
         return false;
     }
     public void print(){
-        System.out.println("  ");
+        System.out.print("  ");
         for(Node node:nodes){
-            System.out.println(node.data+" ");
+            System.out.print(" "+node.data+" ");
         }
         System.out.println();
         for(int i=0;i<matrix.length;i++){
-            System.out.println(nodes.get(i).data+" ");
+            System.out.print(nodes.get(i).data+" ");
             for(int j=0;j<matrix.length;j++){
-                System.out.print(matrix[i][j]);
+                System.out.print(" "+matrix[i][j]+" ");
             }
             System.out.println();
         }
