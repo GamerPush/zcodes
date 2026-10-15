@@ -1,0 +1,27 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.TreeMap;
+
+class Practice2 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        // read n keys and product nameprint product with key<=k and sort by values
+        System.out.print("Enter n: ");
+        int n=sc.nextInt();
+        Map<String,Integer> map=new TreeMap<>();
+        List<String> list=new ArrayList<>();
+        for(int i=0;i<n;i++){
+            String products=sc.next();
+            int id=sc.nextInt();
+            map.put(products,id);
+        }
+        System.out.print("Enter k: ");
+        int k=sc.nextInt();
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+            if (entry.getValue() <= k)
+                System.out.println(entry);
+        }
+    }
+}
